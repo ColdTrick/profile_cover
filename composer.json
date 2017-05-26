@@ -15,6 +15,9 @@
 		"coldtrick/sniffs": "dev-master",
 		"coldtrick/releases": "dev-master"
 	},
+	"suggest": {
+		"hypejunction/cropper": "In order to allow users to crop the profile cover image"
+	},
 	"conflict": {
 		"elgg/elgg": "<2.3"
 	}

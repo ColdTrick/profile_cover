@@ -1,0 +1,9 @@
+/* *******************************
+   PROFILE COVER
+*********************************/
+.profile-cover-remove .elgg-body {
+	text-align: center;
+}
+.profile-cover-remove .elgg-body img {
+	max-height: 200px;
+}
