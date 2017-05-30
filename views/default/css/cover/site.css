@@ -6,4 +6,5 @@
 }
 .profile-cover-remove .elgg-body img {
 	max-height: 200px;
+	width: 100%;
 }
