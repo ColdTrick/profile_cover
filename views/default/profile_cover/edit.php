@@ -28,6 +28,8 @@ echo elgg_view_form('cover/remove', [], [
 ]);
 
 // crop form
-echo elgg_view_form('cover/crop', [], [
+echo elgg_view_form('cover/crop', [
+	'id' => 'cover-crop',
+], [
 	'entity' => $user,
 ]);
