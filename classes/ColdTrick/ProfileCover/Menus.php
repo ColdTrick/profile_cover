@@ -13,7 +13,7 @@ class Menus {
 	 */
 	public static function userHover(\Elgg\Hook $hook) {
 		
-		$user = $hook->getEntityParam()
+		$user = $hook->getEntityParam();
 		if (!$user instanceof \ElggUser || !$user->canEdit()) {
 			return;
 		}
