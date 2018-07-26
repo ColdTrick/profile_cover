@@ -3,7 +3,6 @@
 return [
 	
 	// generic
-	'profile_cover:upload_limit' => "Maximum allowed file size is %s.",
 	'profile_cover:menu:edit' => "Edit profile cover",
 	
 	// plugin settings
@@ -14,7 +13,7 @@ return [
 	'profile_cover:edit:title' => "Edit profile cover",
 	'profile_cover:edit:description' => "Here you can upload an image to set as your profile cover image.",
 	'profile_cover:upload:cover_image' => "Upload a new cover image",
-	'profile_cover:upload:cover_image:help' => "The recommended dimensions for the cover image are %dx%dpx. %s",
+	'profile_cover:upload:cover_image:help' => "The recommended dimensions for the cover image are %dx%dpx.",
 	
 	// remove cover
 	'profile_cover:remove:current' => "Current profile cover image",

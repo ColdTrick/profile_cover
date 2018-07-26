@@ -20,8 +20,8 @@ echo elgg_view_form('cover/upload', [], [
 	'entity' => $user,
 ]);
 
-// remove form
-echo elgg_view_form('cover/remove', [], [
+// remove view
+echo elgg_view('profile_cover/remove', [
 	'entity' => $user,
 ]);
 

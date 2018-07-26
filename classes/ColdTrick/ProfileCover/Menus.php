@@ -58,7 +58,7 @@ class Menus {
 			'name' => 'profile_cover',
 			'text' => elgg_echo('profile_cover:menu:edit'),
 			'href' => elgg_generate_url('settings:cover', [
-				'username' => $user->username,
+				'username' => $page_owner->username,
 			]),
 			'section' => '1_profile',
 		]);
