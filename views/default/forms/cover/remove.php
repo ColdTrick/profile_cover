@@ -1,7 +1,7 @@
 <?php
 
 $user = elgg_extract('entity', $vars);
-if (!($user instanceof ElggUser)) {
+if (!$user instanceof ElggUser) {
 	return;
 }
 
@@ -13,10 +13,10 @@ if (!$user->hasIcon('master', 'profile_cover')) {
 echo elgg_view_field([
 	'#type' => 'hidden',
 	'name' => 'guid',
-	'value' => $user->getGUID(),
+	'value' => $user->guid,
 ]);
 
-echo elgg_view_module('aside', elgg_echo('profile_cover:remove:current'), elgg_view('output/img', [
+echo elgg_view_module('info', elgg_echo('profile_cover:remove:current'), elgg_view('output/img', [
 	'src' => $user->getIconURL([
 		'size' => 'cover',
 		'type' => 'profile_cover',

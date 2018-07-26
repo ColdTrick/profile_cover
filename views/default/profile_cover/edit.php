@@ -6,7 +6,7 @@
  */
 
 $user = elgg_extract('entity', $vars);
-if (!($user instanceof ElggUser)) {
+if (!$user instanceof ElggUser) {
 	return;
 }
 
@@ -16,9 +16,7 @@ echo elgg_view('output/longtext', [
 ]);
 
 // edit/upload form
-echo elgg_view_form('cover/upload', [
-	'enctype' => 'multipart/form-data',
-], [
+echo elgg_view_form('cover/upload', [], [
 	'entity' => $user,
 ]);
 

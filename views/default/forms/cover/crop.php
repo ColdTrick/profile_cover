@@ -3,7 +3,7 @@
 use ColdTrick\ProfileCover\CoverIcon;
 
 $user = elgg_extract('entity', $vars);
-if (!($user instanceof ElggUser) || !elgg_is_active_plugin('cropper')) {
+if (!$user instanceof ElggUser || !elgg_is_active_plugin('cropper')) {
 	return;
 }
 
@@ -15,7 +15,7 @@ if (!$user->hasIcon('master', 'profile_cover')) {
 echo elgg_view_field([
 	'#type' => 'hidden',
 	'name' => 'guid',
-	'value' => $user->getGUID(),
+	'value' => $user->guid,
 ]);
 
 $crop = elgg_view('output/longtext', [
@@ -38,7 +38,7 @@ $crop .= elgg_view_field([
 	'y2' => $user->profile_cover_y2,
 ]);
 
-echo elgg_view_module('aside', elgg_echo('profile_cover:crop:title'), $crop);
+echo elgg_view_module('info', elgg_echo('profile_cover:crop:title'), $crop);
 
 // footer
 $footer = elgg_view_field([

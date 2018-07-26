@@ -1,15 +1,14 @@
 <?php
 
-elgg_gatekeeper();
+use Elgg\EntityPermissionsException;
 
 $username = elgg_extract('username', $vars);
 $user = get_user_by_username($username);
 if (empty($user) || !$user->canEdit()) {
-	register_error(elgg_echo('limited_access'));
-	forward(REFERER);
+	throw new EntityPermissionsException();
 }
 
-elgg_set_page_owner_guid($user->getGUID());
+elgg_set_page_owner_guid($user->guid);
 
 elgg_push_context('settings');
 
