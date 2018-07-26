@@ -25,14 +25,11 @@ class CoverIcon {
 	/**
 	 * Set the correct sizes for the profile cover image
 	 *
-	 * @param string $hook         the name of the hook
-	 * @param string $type         the type of the hook
-	 * @param array  $return_value current return value
-	 * @param array  $params       supplied params
+	 * @param \Elgg\Hook $hook 'entity:profile_cover:sizes', 'user'
 	 *
 	 * @return void|array
 	 */
-	public static function sizes($hook, $type, $return_value, $params) {
+	public static function sizes(\Elgg\Hook $hook) {
 		
 		$return_value = [];
 		
@@ -60,17 +57,14 @@ class CoverIcon {
 	/**
 	 * Hook to tell that profile cover was saved successfully
 	 *
-	 * @param string $hook         the name of the hook
-	 * @param string $type         the type of the hook
-	 * @param array  $return_value current return value
-	 * @param array  $params       supplied params
+	 * @param \Elgg\Hook $hook 'entity:profile_cover:saved'
 	 *
 	 * @return void
 	 */
-	public static function saved($hook, $type, $return_value, $params) {
+	public static function saved(\Elgg\Hook $hook) {
 		
-		$entity = elgg_extract('entity', $params);
-		if (!($entity instanceof \ElggUser)) {
+		$entity = $hook->getEntityParam();
+		if (!$entity instanceof \ElggUser) {
 			return;
 		}
 		
@@ -91,17 +85,14 @@ class CoverIcon {
 	/**
 	 * Hook to tell that profile cover is about to be removed
 	 *
-	 * @param string $hook         the name of the hook
-	 * @param string $type         the type of the hook
-	 * @param array  $return_value current return value
-	 * @param array  $params       supplied params
+	 * @param \Elgg\Hook $hook 'entity:profile_cover:delete'
 	 *
 	 * @return void
 	 */
-	public static function delete($hook, $type, $return_value, $params) {
+	public static function delete(\Elgg\Hook $hook) {
 		
-		$entity = elgg_extract('entity', $params);
-		if (!($entity instanceof \ElggUser)) {
+		$entity = $hook->getEntityParam();
+		if (!$entity instanceof \ElggUser) {
 			return;
 		}
 		
