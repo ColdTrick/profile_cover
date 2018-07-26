@@ -19,4 +19,8 @@ return [
 			'resource' => 'settings/cover',
 		],
 	],
+	'settings' => [
+		'height' => 300,
+		'width' => 1600,
+	],
 ];

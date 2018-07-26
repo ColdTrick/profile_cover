@@ -8,7 +8,7 @@ echo elgg_view_field([
 	'#type' => 'number',
 	'#label' => elgg_echo('profile_cover:settings:width'),
 	'name' => 'params[width]',
-	'value' => (int) $plugin->getSetting('width', 1600),
+	'value' => (int) $plugin->width,
 	'min' => 1,
 ]);
 
@@ -16,6 +16,6 @@ echo elgg_view_field([
 	'#type' => 'number',
 	'#label' => elgg_echo('profile_cover:settings:height'),
 	'name' => 'params[height]',
-	'value' => (int) $plugin->getSetting('height', 300),
+	'value' => (int) $plugin->height,
 	'min' => 1,
 ]);

@@ -10,7 +10,7 @@ class CoverIcon {
 	 * @return int
 	 */
 	public static function getWidth() {
-		return (int) elgg_get_plugin_setting('width', 'profile_cover', 1600);
+		return (int) elgg_get_plugin_setting('width', 'profile_cover');
 	}
 	
 	/**
@@ -19,7 +19,7 @@ class CoverIcon {
 	 * @return int
 	 */
 	public static function getHeight() {
-		return (int) elgg_get_plugin_setting('height', 'profile_cover', 300);
+		return (int) elgg_get_plugin_setting('height', 'profile_cover');
 	}
 	
 	/**
