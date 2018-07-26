@@ -3,7 +3,7 @@
 	"description": "Add a cover image to you profile page",
 	"type": "elgg-plugin",
 	"keywords": ["elgg", "plugin"],
-	"license": "GPL-2.0",
+	"license": "GPL-2.0-only",
 	"support": {
 		"source": "https://github.com/ColdTrick/profile_cover",
 		"issues": "https://github.com/ColdTrick/profile_cover/issues"
@@ -19,6 +19,6 @@
 		"hypejunction/cropper": "In order to allow users to crop the profile cover image"
 	},
 	"conflict": {
-		"elgg/elgg": "<2.3"
+		"elgg/elgg": "<3.0"
 	}
 }
