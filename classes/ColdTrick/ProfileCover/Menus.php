@@ -24,11 +24,40 @@ class Menus {
 		
 		$return_value[] = \ElggMenuItem::factory([
 			'name' => 'profile_cover',
+			'icon' => 'image',
 			'text' => elgg_echo('profile_cover:menu:edit'),
 			'href' => elgg_generate_url('settings:cover', [
 				'username' => $user->username,
 			]),
 			'section' => $section,
+		]);
+		
+		return $return_value;
+	}
+	
+	/**
+	 * Add menu items to the entity menu of a user
+	 *
+	 * @param \Elgg\Hook $hook 'register', 'menu:entity'
+	 *
+	 * @return void|\ElggMenuItem[]
+	 */
+	public static function entityMenu(\Elgg\Hook $hook) {
+		
+		$user = $hook->getEntityParam();
+		if (!$user instanceof \ElggUser || !$user->canEdit()) {
+			return;
+		}
+		
+		$return_value = $hook->getValue();
+		
+		$return_value[] = \ElggMenuItem::factory([
+			'name' => 'profile_cover',
+			'icon' => 'image',
+			'text' => elgg_echo('profile_cover:menu:edit'),
+			'href' => elgg_generate_url('settings:cover', [
+				'username' => $user->username,
+			]),
 		]);
 		
 		return $return_value;
