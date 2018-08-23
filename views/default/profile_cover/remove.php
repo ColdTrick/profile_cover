@@ -25,6 +25,7 @@ echo elgg_view_module('info', elgg_echo('profile_cover:remove:current'), elgg_vi
 		'type' => 'profile_cover',
 	]),
 	'alt' => $user->getDisplayName(),
+	'title' => $user->getDisplayName(),
 ]), [
 	'class' => 'profile-cover-remove',
 	'menu' => $remove_button,
