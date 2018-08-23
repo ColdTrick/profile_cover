@@ -12,6 +12,8 @@ elgg_set_page_owner_guid($user->guid);
 
 elgg_push_context('settings');
 
+elgg_push_breadcrumb($user->getDisplayName(), $user->getURL());
+
 // build page components
 $title = elgg_echo('profile_cover:edit:title');
 
