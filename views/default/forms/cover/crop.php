@@ -2,12 +2,12 @@
 
 use ColdTrick\ProfileCover\CoverIcon;
 
-$user = elgg_extract('entity', $vars);
-if (!($user instanceof ElggUser) || !elgg_is_active_plugin('cropper')) {
+$entity = elgg_extract('entity', $vars);
+if (!($entity instanceof ElggEntity) || !elgg_is_active_plugin('cropper')) {
 	return;
 }
 
-if (!$user->hasIcon('master', 'profile_cover')) {
+if (!$entity->hasIcon('master', 'profile_cover')) {
 	// no uploaded cover image
 	return;
 }
@@ -15,7 +15,7 @@ if (!$user->hasIcon('master', 'profile_cover')) {
 echo elgg_view_field([
 	'#type' => 'hidden',
 	'name' => 'guid',
-	'value' => $user->getGUID(),
+	'value' => $entity->getGUID(),
 ]);
 
 $crop = elgg_view('output/longtext', [
@@ -26,16 +26,16 @@ $crop = elgg_view('output/longtext', [
 $crop .= elgg_view_field([
 	'#type' => 'cropper',
 	'name' => 'crop',
-	'src' => $user->getIconURL([
+	'src' => $entity->getIconURL([
 		'size' => 'master',
 		'type' => 'profile_cover',
 	]),
 	'id' => 'profile-cover-crop',
 	'ratio' => CoverIcon::getWidth() / CoverIcon::getHeight(),
-	'x1' => $user->profile_cover_x1,
-	'y1' => $user->profile_cover_y1,
-	'x2' => $user->profile_cover_x2,
-	'y2' => $user->profile_cover_y2,
+	'x1' => $entity->profile_cover_x1,
+	'y1' => $entity->profile_cover_y1,
+	'x2' => $entity->profile_cover_x2,
+	'y2' => $entity->profile_cover_y2,
 ]);
 
 echo elgg_view_module('aside', elgg_echo('profile_cover:crop:title'), $crop);

@@ -7,8 +7,8 @@ if (empty($guid) || empty($images)) {
 	return elgg_error_response(elgg_echo('error:missing_data'));
 }
 
-$user = get_user($guid);
-if (empty($user) || !$user->canEdit()) {
+$entity = get_entity($guid);
+if (empty($entity) || !$entity->canEdit()) {
 	return elgg_error_response(elgg_echo('actionunauthorized'));
 }
 
@@ -19,7 +19,7 @@ foreach ($images as $image) {
 	}
 }
 
-if ($user->saveIconFromUploadedFile('cover_image', 'profile_cover')) {
+if ($entity->saveIconFromUploadedFile('cover_image', 'profile_cover')) {
 	return elgg_ok_response('', elgg_echo('profile_cover:action:upload:success'));
 }
 

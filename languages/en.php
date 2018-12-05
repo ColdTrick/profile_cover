@@ -5,6 +5,7 @@ return [
 	// generic
 	'profile_cover:upload_limit' => "Maximum allowed file size is %s.",
 	'profile_cover:menu:edit' => "Edit profile cover",
+	'cover:edit' => "Edit cover image",
 	
 	// plugin settings
 	'profile_cover:settings:height' => "Profile cover height (in px)",

@@ -16,10 +16,8 @@ class PageHandler {
 		switch (elgg_extract(0, $page)) {
 			case 'edit':
 				
-				$username = elgg_extract(1, $page);
-				
 				echo elgg_view_resource('cover/edit', [
-					'username' => $username,
+					'guid' => elgg_extract(1, $page),
 				]);
 				return true;
 				break;

@@ -2,11 +2,11 @@
 /**
  * Helper view for the edit cover page
  *
- * @uses \ElggUser $vars['entity'] the user to edit
+ * @uses \ElggEntity $vars['entity'] the entity to edit
  */
 
-$user = elgg_extract('entity', $vars);
-if (!($user instanceof ElggUser)) {
+$entity = elgg_extract('entity', $vars);
+if (!($entity instanceof ElggEntity)) {
 	return;
 }
 
@@ -19,17 +19,17 @@ echo elgg_view('output/longtext', [
 echo elgg_view_form('cover/upload', [
 	'enctype' => 'multipart/form-data',
 ], [
-	'entity' => $user,
+	'entity' => $entity,
 ]);
 
 // remove form
 echo elgg_view_form('cover/remove', [], [
-	'entity' => $user,
+	'entity' => $entity,
 ]);
 
 // crop form
 echo elgg_view_form('cover/crop', [
 	'id' => 'cover-crop',
 ], [
-	'entity' => $user,
+	'entity' => $entity,
 ]);

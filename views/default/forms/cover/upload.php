@@ -1,14 +1,14 @@
 <?php
 
-$user = elgg_extract('entity', $vars);
-if (!($user instanceof ElggUser)) {
+$entity = elgg_extract('entity', $vars);
+if (!($entity instanceof ElggEntity)) {
 	return;
 }
 
 echo elgg_view_field([
 	'#type' => 'hidden',
 	'name' => 'guid',
-	'value' => $user->getGUID(),
+	'value' => $entity->getGUID(),
 ]);
 
 // Get post_max_size and upload_max_filesize

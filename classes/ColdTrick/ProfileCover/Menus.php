@@ -26,7 +26,7 @@ class Menus {
 		$return_value[] = \ElggMenuItem::factory([
 			'name' => 'profile_cover',
 			'text' => elgg_echo('profile_cover:menu:edit'),
-			'href' => "cover/edit/{$user->username}",
+			'href' => "cover/edit/{$user->guid}",
 			'section' => $section,
 		]);
 		
@@ -57,7 +57,7 @@ class Menus {
 		$return_value[] = \ElggMenuItem::factory([
 			'name' => 'profile_cover',
 			'text' => elgg_echo('profile_cover:menu:edit'),
-			'href' => "cover/edit/{$page_owner->username}",
+			'href' => "cover/edit/{$page_owner->guid}",
 			'section' => '1_profile',
 		]);
 		

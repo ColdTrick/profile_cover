@@ -70,7 +70,7 @@ class CoverIcon {
 	public static function saved($hook, $type, $return_value, $params) {
 		
 		$entity = elgg_extract('entity', $params);
-		if (!($entity instanceof \ElggUser)) {
+		if (!($entity instanceof \ElggEntity)) {
 			return;
 		}
 		
@@ -101,7 +101,7 @@ class CoverIcon {
 	public static function delete($hook, $type, $return_value, $params) {
 		
 		$entity = elgg_extract('entity', $params);
-		if (!($entity instanceof \ElggUser)) {
+		if (!($entity instanceof \ElggEntity)) {
 			return;
 		}
 		

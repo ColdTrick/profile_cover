@@ -2,14 +2,14 @@
 
 elgg_gatekeeper();
 
-$username = elgg_extract('username', $vars);
-$user = get_user_by_username($username);
-if (empty($user) || !$user->canEdit()) {
+$guid = elgg_extract('guid', $vars);
+$entity = get_entity($guid);
+if (empty($entity) || !$entity->canEdit()) {
 	register_error(elgg_echo('limited_access'));
 	forward(REFERER);
 }
 
-elgg_set_page_owner_guid($user->getGUID());
+elgg_set_page_owner_guid($entity->getGUID());
 
 elgg_push_context('settings');
 
@@ -17,7 +17,7 @@ elgg_push_context('settings');
 $title = elgg_echo('profile_cover:edit:title');
 
 $content = elgg_view('profile_cover/edit', [
-	'entity' => $user,
+	'entity' => $entity,
 ]);
 
 // build page

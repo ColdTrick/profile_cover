@@ -1,11 +1,11 @@
 <?php
 
-$user = elgg_extract('entity', $vars);
-if (!($user instanceof ElggUser)) {
+$entity = elgg_extract('entity', $vars);
+if (!($entity instanceof ElggEntity)) {
 	return;
 }
 
-if (!$user->hasIcon('master', 'profile_cover')) {
+if (!$entity->hasIcon('master', 'profile_cover')) {
 	// no uploaded cover image
 	return;
 }
@@ -13,15 +13,15 @@ if (!$user->hasIcon('master', 'profile_cover')) {
 echo elgg_view_field([
 	'#type' => 'hidden',
 	'name' => 'guid',
-	'value' => $user->getGUID(),
+	'value' => $entity->getGUID(),
 ]);
 
 echo elgg_view_module('aside', elgg_echo('profile_cover:remove:current'), elgg_view('output/img', [
-	'src' => $user->getIconURL([
+	'src' => $entity->getIconURL([
 		'size' => 'cover',
 		'type' => 'profile_cover',
 	]),
-	'alt' => $user->getDisplayName(),
+	'alt' => $entity->getDisplayName(),
 ]), [
 	'class' => 'profile-cover-remove',
 ]);
