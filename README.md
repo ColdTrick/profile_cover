@@ -12,7 +12,7 @@ The width and height can be set in the plugin settings (default: 1600px x 300px)
 
 ## Note
 
-This plugin doesn't provide a means to show the actual profile cover image. It offers the option to upload/remove/crop the image.
+This plugin doesn't provide a means to show the actual profile cover image. It offers the option to upload/remove the image.
 
 To display the image user:
 
