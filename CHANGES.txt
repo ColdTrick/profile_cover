@@ -1,6 +1,16 @@
 Version history
 ===============
 
+2.0 (2019-03-27):
+
+- added: Dutch translation
+- added: edit profile cover to entity menu
+- changed: increased minimal Elgg version to 3.0
+- changed: moved contents of start.php to Bootstrap and elgg-plugin.php
+- changed: reworked for Elgg 3.0
+- changed: reworked plugin to use Elgg core logic
+- fixed: profile cover preview stretched
+
 1.0 (2017-11-10):
 
 - added: basic plugin options upload/remove/crop of profile cover image
