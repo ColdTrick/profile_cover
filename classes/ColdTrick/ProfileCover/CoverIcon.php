@@ -35,8 +35,8 @@ class CoverIcon {
 		
 		if (!isset($result['master'])) {
 			$result['master'] = [
-				'w' => 2048,
-				'h' => 2048,
+				'w' => 10240,
+				'h' => 10240,
 				'square' => false,
 				'upscale' => false,
 				'crop' => false,
