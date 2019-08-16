@@ -3,24 +3,18 @@
 	<name>Profile cover</name>
 	<id>profile_cover</id>
 	<author>ColdTrick IT Solutions</author>
-	<version>2.0.2</version>
+	<version>3.0-beta</version>
 	<description>Add a cover image to you profile page</description>
 	<website>http://www.coldtrick.com/</website>
 	<repository>https://github.com/ColdTrick/profile_cover</repository>
 	<bugtracker>https://github.com/ColdTrick/profile_cover/issues</bugtracker>
-	<copyright>(C) ColdTrick IT Solutions 2017 - 2018</copyright>
+	<copyright>(C) ColdTrick IT Solutions 2017 - 2019</copyright>
 	<license>GNU General Public License version 2</license>
 	
 	<requires>
 		<type>elgg_release</type>
-		<version>3.0</version>
+		<version>3.1</version>
 	</requires>
-	
-	<suggests>
-		<type>plugin</type>
-		<name>cropper</name>
-		<version>1.1</version>
-	</suggests>
 	
 	<category>ColdTrick</category>
 </plugin_manifest>
