@@ -27,6 +27,5 @@ class Bootstrap extends DefaultPluginBootstrap {
 		$hooks->registerHandler('register', 'menu:entity', __NAMESPACE__ . '\Menus::entityMenu');
 		$hooks->registerHandler('register', 'menu:page', __NAMESPACE__ . '\Menus::settingsPage');
 		$hooks->registerHandler('register', 'menu:user_hover', __NAMESPACE__ . '\Menus::userHover');
-		$hooks->registerHandler('view_vars', 'icon_cropper/init', __NAMESPACE__ . '\IconCropper::setAspectRatioSize');
 	}
 }

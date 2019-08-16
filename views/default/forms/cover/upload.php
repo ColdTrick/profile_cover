@@ -28,6 +28,11 @@ echo elgg_view('entity/edit/icon', [
 	'icon_type' => 'profile_cover',
 	'thumb_size' => 'cover',
 	'name' => 'cover',
+	'cropper_enabled' => true,
+	'cropper_aspect_ratio_size' => 'cover',
+	'cropper_show_messages' => true,
+	'cropper_min_width' => $width,
+	'cropper_min_height' => $height,
 ]);
 
 // footer
