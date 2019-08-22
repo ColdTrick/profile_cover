@@ -1,6 +1,11 @@
 Version history
 ===============
 
+3.0 (2019-08-22):
+
+- changed: cropper support move to Elgg core
+- changed: increased minimal Elgg version to 3.1
+
 2.0.2 (2019-05-02):
 
 - fixed: increased master size to prevent cropping issues
