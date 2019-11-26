@@ -1,6 +1,10 @@
 Version history
 ===============
 
+1.1 (2019-11-26):
+
+- added: cover image can now be added to any entity
+
 1.0 (2017-11-10):
 
 - added: basic plugin options upload/remove/crop of profile cover image
