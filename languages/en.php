@@ -4,6 +4,7 @@ return [
 	
 	// generic
 	'profile_cover:menu:edit' => "Edit profile cover",
+	'profile_cover:menu:edit:generic' => "Edit cover",
 	
 	// upgrades
 	'profile_cover:upgrade:2018121400:title' => "Migrate profile cover cropping coordinates",

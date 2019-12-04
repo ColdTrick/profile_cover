@@ -17,6 +17,13 @@ return [
 			],
 			'resource' => 'settings/cover',
 		],
+		'cover:edit' => [
+			'path' => 'cover/edit/{guid}',
+			'middleware' => [
+				Gatekeeper::class,
+			],
+			'resource' => 'cover/edit',
+		],
 	],
 	'settings' => [
 		'height' => 300,
