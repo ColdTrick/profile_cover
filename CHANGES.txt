@@ -1,6 +1,10 @@
 Version history
 ===============
 
+3.1 (2020-05-26):
+
+- added: generic url and resource for cover management on any entity
+
 3.0 (2019-08-22):
 
 - changed: cropper support move to Elgg core
