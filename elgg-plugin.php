@@ -1,13 +1,32 @@
 <?php
 
-use ColdTrick\ProfileCover\Bootstrap;
 use Elgg\Router\Middleware\Gatekeeper;
 use ColdTrick\ProfileCover\Upgrades\MigrateCroppingCoordinates;
 
 return [
-	'bootstrap' => Bootstrap::class,
+	'plugin' => [
+		'version' => '3.1',
+	],
 	'actions' => [
 		'cover/upload' => [],
+	],
+	'hooks' => [
+		'entity:profile_cover:sizes' => [
+			'all' => [
+				'\ColdTrick\ProfileCover\CoverIcon::sizes' => [],
+			],
+		],
+		'register' => [
+			'menu:entity' => [
+				'\ColdTrick\ProfileCover\Menus::entityMenu' => [],
+			],
+			'menu:page' => [
+				'\ColdTrick\ProfileCover\Menus::settingsPage' => [],
+			],
+			'menu:user_hover' => [
+				'\ColdTrick\ProfileCover\Menus::userHover' => [],
+			],
+		],
 	],
 	'routes' => [
 		'settings:cover' => [

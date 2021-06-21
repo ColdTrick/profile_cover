@@ -1,31 +1,20 @@
 <?php
 
-use Elgg\EntityPermissionsException;
+use Elgg\Exceptions\Http\EntityPermissionsException;
 
-$guid = elgg_extract('guid', $vars);
+$guid = (int) elgg_extract('guid', $vars);
 $entity = get_entity($guid);
 if (!$entity instanceof \ElggEntity || !$entity->canEdit()) {
 	throw new EntityPermissionsException();
 }
 
-elgg_set_page_owner_guid($entity->guid);
+elgg_set_page_owner_guid($entity->container_guid);
+elgg_push_entity_breadcrumbs($entity);
 
-// build page components
-$title = elgg_echo('profile_cover:edit:title');
-
-$content = elgg_view_form('cover/upload', [], [
-	'entity' => $entity,
-]);
-
-// build page
-$body = elgg_view_layout('default', [
-	'title' => $title,
-	'content' => $content,
+echo elgg_view_page(elgg_echo('profile_cover:edit:title'), [
+	'content' => elgg_view_form('cover/upload', [], [
+		'entity' => $entity,
+	]),
 	'filter_id' => 'cover',
 	'filter_value' => 'cover',
 ]);
-
-// draw page
-echo elgg_view_page($title, $body);
-
-elgg_pop_context();

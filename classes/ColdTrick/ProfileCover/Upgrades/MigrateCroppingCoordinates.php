@@ -11,7 +11,7 @@ class MigrateCroppingCoordinates implements AsynchronousUpgrade {
 	 * {@inheritDoc}
 	 * @see \Elgg\Upgrade\Batch::getVersion()
 	 */
-	public function getVersion() {
+	public function getVersion(): int {
 		return 2018121400;
 	}
 	
@@ -19,7 +19,7 @@ class MigrateCroppingCoordinates implements AsynchronousUpgrade {
 	 * {@inheritDoc}
 	 * @see \Elgg\Upgrade\Batch::shouldBeSkipped()
 	 */
-	public function shouldBeSkipped() {
+	public function shouldBeSkipped(): bool {
 		return empty($this->countItems());
 	}
 	
@@ -27,15 +27,15 @@ class MigrateCroppingCoordinates implements AsynchronousUpgrade {
 	 * {@inheritDoc}
 	 * @see \Elgg\Upgrade\Batch::countItems()
 	 */
-	public function countItems() {
-		return elgg_get_entities($this->getOptions(['count' => true]));
+	public function countItems(): int {
+		return elgg_count_entities($this->getOptions());
 	}
 	
 	/**
 	 * {@inheritDoc}
 	 * @see \Elgg\Upgrade\Batch::needsIncrementOffset()
 	 */
-	public function needsIncrementOffset() {
+	public function needsIncrementOffset(): bool {
 		return false;
 	}
 	
@@ -45,7 +45,7 @@ class MigrateCroppingCoordinates implements AsynchronousUpgrade {
 	 * {@inheritDoc}
 	 * @see \Elgg\Upgrade\Batch::run()
 	 */
-	public function run(Result $result, $offset) {
+	public function run(Result $result, $offset): Result {
 		
 		$entities = elgg_get_entities($this->getOptions(['offset' => $offset]));
 		/* @var $entity \ElggEntity */
@@ -80,6 +80,8 @@ class MigrateCroppingCoordinates implements AsynchronousUpgrade {
 			
 			$result->addSuccesses();
 		}
+		
+		return $result;
 	}
 	
 	/**
@@ -90,7 +92,7 @@ class MigrateCroppingCoordinates implements AsynchronousUpgrade {
 	 * @see elgg_get_entities()
 	 * @return array
 	 */
-	protected function getOptions(array $options = []) {
+	protected function getOptions(array $options = []): array {
 		$defaults = [
 			'metadata_names' => [
 				'profile_cover',
