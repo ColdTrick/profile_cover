@@ -1,10 +1,11 @@
 <?php
 /**
- * This file was created by Translation Editor v7.0-beta
- * On 2018-12-14 16:40
+ * This file was created by Translation Editor v8.0
+ * On 2021-08-06 10:35
  */
 
 return array (
+  'profile_cover:menu:edit:generic' => 'Bewerk achtergrond',
   'profile_cover:menu:edit' => 'Bewerk profiel achtergrond',
   'profile_cover:upgrade:2018121400:title' => 'Migreer profiel achtergrond uitsnede coördinaten',
   'profile_cover:upgrade:2018121400:description' => 'Verplaats de opgeslagen profiel achtergrond uitsnede coördinaten naar de standaard Elgg locatie.',
