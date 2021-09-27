@@ -5,7 +5,7 @@ use ColdTrick\ProfileCover\Upgrades\MigrateCroppingCoordinates;
 
 return [
 	'plugin' => [
-		'version' => '3.1',
+		'version' => '4.0',
 	],
 	'actions' => [
 		'cover/upload' => [],
