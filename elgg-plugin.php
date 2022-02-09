@@ -1,8 +1,8 @@
 <?php
 
-use Elgg\Router\Middleware\Gatekeeper;
 use ColdTrick\ProfileCover\Upgrades\MigrateCroppingCoordinates;
-use Elgg\Router\Middleware\PageOwnerCanEditGatekeeper;
+use Elgg\Router\Middleware\Gatekeeper;
+use Elgg\Router\Middleware\UserPageOwnerCanEditGatekeeper;
 
 return [
 	'plugin' => [
@@ -34,7 +34,7 @@ return [
 			'path' => 'settings/cover/{username}',
 			'middleware' => [
 				Gatekeeper::class,
-				PageOwnerCanEditGatekeeper::class,
+				UserPageOwnerCanEditGatekeeper::class,
 			],
 			'resource' => 'settings/cover',
 			'detect_page_owner' => true,
