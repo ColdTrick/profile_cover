@@ -1,6 +1,11 @@
 Version history
 ===============
 
+5.0 (2022-02-16):
+
+- changed: increased minimal Elgg version to 4.1
+- fixed: page owner detection on settings page
+
 4.0 (2021-09-27):
 
 - changed: updated for Elgg 4.0

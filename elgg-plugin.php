@@ -6,7 +6,7 @@ use Elgg\Router\Middleware\UserPageOwnerCanEditGatekeeper;
 
 return [
 	'plugin' => [
-		'version' => '4.0',
+		'version' => '5.0',
 	],
 	'actions' => [
 		'cover/upload' => [],
