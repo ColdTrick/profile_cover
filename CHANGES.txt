@@ -1,6 +1,10 @@
 Version history
 ===============
 
+5.0.1 (2022-07-12):
+
+- several small chores/fixes
+
 5.0 (2022-02-16):
 
 - changed: increased minimal Elgg version to 4.1
